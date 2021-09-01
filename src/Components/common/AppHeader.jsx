@@ -21,11 +21,11 @@ const AppHeader = () => {
           />
         </Link>
 
-        <Link to="/about">
+        <Link to="/shop">
           <Menu.Item
-            name="about"
-            active={activeItem === "about"}
-            content="About"
+            name="shop"
+            active={activeItem === "shop"}
+            content="shop"
             onClick={handleClick}
           />
         </Link>
@@ -42,7 +42,7 @@ const AppHeader = () => {
             <Input icon="search" placeholder="Search..." />
           </Menu.Item>
           <Menu.Item name="cart" content="Cart" onClick={handleClick}>
-            <Icon name="shopping cart" />
+            <Icon color="violet" name="shopping cart" />
           </Menu.Item>
         </Menu.Menu>
       </Menu>
