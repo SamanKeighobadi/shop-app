@@ -11,7 +11,7 @@ const useProducts = (url) => {
         try {
             const {data}= await axios.get(url).catch(err => console.log(err))
             setData(data)
-            setLoading(true)
+            setLoading(false)
         
         } catch (err) {
             console.log(err)
