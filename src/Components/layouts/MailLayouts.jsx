@@ -1,40 +1,14 @@
-import {useState} from 'react';
-import {Menu} from "semantic-ui-react"
+import React from "react";
+import AppHeader from "../common/AppHeader";
 
-const MailLayouts = () => {
-
-    const [active,setActive] = useState(false)
-
-    const handleClick = (e,name) => {
-        setActive(preState => !preState)
-    }
-
-    return (
-        <div>
-            <Menu>
-                <Menu.Item
-                active={active}
-                onClick={handleClick}
-                >
-                    home
-                </Menu.Item>
-
-                <Menu.Item
-                active={active}
-                onClick={handleClick}
-                >
-                    home
-                </Menu.Item>
-
-                <Menu.Item
-                active={active}
-                onClick={handleClick}
-                >
-                    home
-                </Menu.Item>
-            </Menu>
-        </div>
-    );
+const MailLayouts = ({children}) => {
+  
+  return (
+    <div>
+      <AppHeader />
+      {children}
+    </div>
+  );
 };
 
 export default MailLayouts;
