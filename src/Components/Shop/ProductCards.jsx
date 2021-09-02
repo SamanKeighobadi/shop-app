@@ -9,12 +9,14 @@ const ProductCards = () => {
     "https://fakestoreapi.com/products"
   );
 
+  
+
   return (
     <div>
       {loading ? (
         <AppLoading />
       ) : (
-        <Grid textAlign="center">
+        <Grid textAlign="center" centered>
           {products.map((product, index) => (
             <ProductCard
               key={index}

@@ -7,7 +7,7 @@ const ProductCardButton = () => {
       <Button animated color="violet" floated="right" size="mini">
         <Button.Content visible>Add To Cart</Button.Content>
         <Button.Content hidden>
-          <Icon name="shop" />
+          <Icon name="cart arrow down" />
         </Button.Content>
       </Button>
     </div>
