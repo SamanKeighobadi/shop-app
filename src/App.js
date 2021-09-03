@@ -13,7 +13,6 @@ function App() {
       <Switch>
         <Route path="/" exact render={() => <h1>home</h1>} />
         <Route path="/shop" component={AppShopPage} />
-        <Route path="/saman" render={() => <h1>saman</h1>} />
         <Route path="/auth" component={Authentication} />
       </Switch>
     </MailLayouts>
