@@ -6,7 +6,7 @@ const AppShopPage = () => {
 
   return (
     <Container textAlign='center'>
-      <Header size='huge'  as='h1' >Products</Header>
+      <Header  content="Products" dividing   size='huge'  as='h1' />
       <ProductCards />
     </Container>
   );

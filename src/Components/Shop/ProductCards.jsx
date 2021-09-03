@@ -9,22 +9,21 @@ const ProductCards = () => {
     "https://fakestoreapi.com/products"
   );
 
-  
-
   return (
     <div>
       {loading ? (
         <AppLoading />
       ) : (
-        <Grid textAlign="center" centered>
+        <Grid verticalAlign={'middle'} centered>
           {products.map((product, index) => (
-            <ProductCard
-              key={index}
-              title={product.title}
-              image={product.image}
-              category={product.category}
-              price={product.price}
-            />
+            <Grid.Column computer={4} tablet={8} mobile={16} key={index}>
+              <ProductCard
+                title={product.title}
+                image={product.image}
+                category={product.category}
+                price={product.price}
+              />
+            </Grid.Column>
           ))}
         </Grid>
       )}

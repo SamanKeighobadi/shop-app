@@ -5,16 +5,16 @@ import ProductCardButton from "./ProductCardButton";
 const ProductCard = ({ title, image, price, category }) => {
   return (
     <div>
-      <Card color="violet" >
-        <Image size="small" centered src={image} wrapped ui={true} />
-        <Card.Content>
-          <Card.Header > {title.slice(0,15)} </Card.Header>
+      <Card color="violet" centered >
+        <Image size="small"  centered src={image} />
+        <Card.Content textAlign='right'>
+          <Card.Header content={title.slice(0, 15)} />
           <Card.Meta>
-            <span > category: {category}</span>
+            <span> category: {category}</span>
           </Card.Meta>
         </Card.Content>
         <Card.Content extra>
-          <Label floating color='red'>{price}$</Label>
+          <Label content={price}  floating color="red"/>
           <ProductCardButton />
         </Card.Content>
       </Card>

@@ -1,10 +1,11 @@
 import React from "react";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Header } from "semantic-ui-react";
 
 const Register = () => {
   return (
     <div>
       <Form>
+        <Header content="Register" />
         <Form.Input label="Fullname" placeholder="fullname" icon="users" />
         <Form.Input
           label="Email"

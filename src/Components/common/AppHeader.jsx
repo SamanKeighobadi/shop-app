@@ -5,6 +5,7 @@ import { Menu, Input, Icon ,Label} from "semantic-ui-react";
 const AppHeader = () => {
   const [activeItem, setActive] = useState(false);
 
+
   const handleClick = (e, name) => {
     setActive((preState) => ({ activeItem: name }));
   };
@@ -51,7 +52,7 @@ const AppHeader = () => {
           </Menu.Item>
           <Menu.Item name="cart"  onClick={handleClick}>
             <Icon color="violet" name="shopping cart" />
-            <Label size='mini' icon="shopping cart" circular color='red' >0</Label>
+            <Label size='mini' icon="shopping cart" circular color='red' >{0}</Label>
           </Menu.Item>
         </Menu.Menu>
       </Menu>
