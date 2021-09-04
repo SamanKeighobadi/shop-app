@@ -9,11 +9,9 @@ const AppHeader = ({productLength}) => {
     setActive((preState) => ({ activeItem: name }));
   };
 
-  console.log(productLength)
-
   return (
     <div>
-      <Menu stackable>
+      <Menu  stackable>
         <Link to="/">
           <Menu.Item
             name="home"

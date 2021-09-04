@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Icon } from "semantic-ui-react";
 
 const ProductCardButton = ({ product,addToCart }) => {
-  // const [cart, setCart] = useState([]);
-
-  // const addToCart = (product) => {
-  //   setCart([...cart, { product }]);
-  //   console.log(cart);
-  //   console.log(cart.length);
-  // };
+  
 
   return (
     <div>

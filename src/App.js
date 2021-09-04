@@ -16,8 +16,6 @@ function App() {
     setCart(result);
   };
 
-  console.log(cart);
-  console.log(cart.length);
 
   return (
     <Fragment>
@@ -32,7 +30,7 @@ function App() {
             )}
           />
           <Route path="/auth" component={Authentication} />
-          <Route path="/cart" component={AppCartPage} />
+          <Route path="/cart" render={() => <AppCartPage productsInCart={cart} />} />
         </Switch>
 
       </MailLayouts>
