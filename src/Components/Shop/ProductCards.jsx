@@ -4,7 +4,8 @@ import ProductCard from "./ProductCard";
 import { Grid } from "semantic-ui-react";
 import AppLoading from "../common/AppLoading";
 
-const ProductCards = () => {
+const ProductCards = ({addToCart}) => {
+  
   const { data: products, loading } = useProducts(
     "https://fakestoreapi.com/products"
   );
@@ -14,7 +15,7 @@ const ProductCards = () => {
       {loading ? (
         <AppLoading />
       ) : (
-        <Grid verticalAlign={'middle'} centered>
+        <Grid verticalAlign={"middle"} centered>
           {products.map((product, index) => (
             <Grid.Column computer={4} tablet={8} mobile={16} key={index}>
               <ProductCard
@@ -23,6 +24,7 @@ const ProductCards = () => {
                 category={product.category}
                 price={product.price}
                 product={product}
+                addToCart={() => addToCart(product)}
               />
             </Grid.Column>
           ))}

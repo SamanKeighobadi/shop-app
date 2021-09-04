@@ -1,11 +1,11 @@
 import React from "react";
 import AppHeader from "../common/AppHeader";
 
-const MailLayouts = ({children}) => {
+const MailLayouts = ({children,productLength}) => {
   
   return (
     <div>
-      <AppHeader />
+      <AppHeader productLength={productLength} />
       {children}
     </div>
   );

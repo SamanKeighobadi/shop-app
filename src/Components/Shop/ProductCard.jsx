@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Image, Label } from "semantic-ui-react";
 import ProductCardButton from "./ProductCardButton";
 
-const ProductCard = ({ title, image, price, category,product }) => {
+const ProductCard = ({ title, image, price, category,product ,addToCart}) => {
   return (
     <div>
       <Card color="violet" centered >
@@ -15,7 +15,7 @@ const ProductCard = ({ title, image, price, category,product }) => {
         </Card.Content>
         <Card.Content extra>
           <Label content={price}  floating color="red"/>
-          <ProductCardButton product={product} />
+          <ProductCardButton addToCart={() => addToCart(product)} product={product} />
         </Card.Content>
       </Card>
     </div>

@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Input, Icon, Label } from "semantic-ui-react";
 
-const AppHeader = () => {
+const AppHeader = ({productLength}) => {
   const [activeItem, setActive] = useState(false);
 
   const handleClick = (e, name) => {
     setActive((preState) => ({ activeItem: name }));
   };
 
-  const cart = [1, 2, 3, 4];
+  console.log(productLength)
 
   return (
     <div>
@@ -50,7 +50,7 @@ const AppHeader = () => {
             <Menu.Item name="cart" onClick={handleClick}>
               <Icon color="violet" name="shopping cart" />
               <Label size="mini" icon="shopping cart" circular color="red">
-                {cart.length}
+                {productLength}
               </Label>
             </Menu.Item>
           </Link>
