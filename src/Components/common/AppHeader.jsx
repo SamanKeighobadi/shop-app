@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, Input, Icon, Label } from "semantic-ui-react";
+import { Menu, Input, Icon, Label, Dropdown } from "semantic-ui-react";
+import AppDropdonw from "../utils/AppDropdonw";
 
 const AppHeader = () => {
   const [activeItem, setActive] = useState(false);
@@ -38,6 +39,7 @@ const AppHeader = () => {
             onClick={handleClick}
           />
         </Link>
+
         <Menu.Menu position="right">
           <Menu.Item>
             <Input icon="search" placeholder="Search..." />
