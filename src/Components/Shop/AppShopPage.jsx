@@ -1,13 +1,16 @@
 import React from "react";
-import { Container } from "semantic-ui-react";
-import HeaderShopPage from "./HeaderShopPage";
+import { Container, Header } from "semantic-ui-react";
 import ProductCards from "./ProductCards";
 
-const AppShopPage = ({addToCart}) => {
-
+const AppShopPage = ({ addToCart }) => {
   return (
-    <Container textAlign='center'>
-      <HeaderShopPage />
+    <Container textAlign="center">
+      <Header
+        content="Our Products"
+        size="huge"
+        textAlign="left"
+        style={{ padding: "1.25rem 0" }} 
+      />
       <ProductCards addToCart={addToCart} />
     </Container>
   );
