@@ -1,71 +1,36 @@
 import React from "react";
 import {
-  Grid,
   Form,
   Button,
   Container,
   Header,
   Segment,
+  Checkbox,
 } from "semantic-ui-react";
 
 const Login = () => {
-  const options = [
-    { key: "M", text: "Male", value: "male" },
-    { key: "F", text: "Female", value: "female" },
-  ];
+  
 
   return (
-    <Container style={{ marginTop: "4rem" }} >
-      <Segment color='violet' >
+    
+
+    <Container style={{ marginTop: "4rem" }}>
+      <Segment color="violet">
         <Form>
           <Header content="Login" size={"huge"} />
-          <Form.Group widths="equal">
-            <Form.Input
-              fluid
-              label="First name"
-              required
-              placeholder="First name"
-            />
-            <Form.Input
-              fluid
-              label="Last name"
-              required
-              placeholder="Last name"
-            />
-            <Form.Select
-              fluid
-              label="Gender"
-              options={options}
-              placeholder="Gender"
-            />
-          </Form.Group>
+          <Form.Field>
+            <label>Email:</label>
+            <input type="email"  placeholder="example@gmail.com" />
+          </Form.Field>
+          <Form.Field>
+            <label>Password:</label>
+            <input type="password" placeholder="Password" />
+          </Form.Field>
+          <Form.Field>
+            <Checkbox label="I agree to the Terms and Conditions" />
+          </Form.Field>
+          <Button type="submit" color='vk' size='small'>Submit</Button>
         </Form>
-        <Form>
-          <Form.Group widths="equal">
-            <Form.Input
-              fluid
-              label="Email"
-              type="email"
-              required
-              placeholder="First name"
-            />
-            <Form.Input
-              fluid
-              label="Password"
-              type="password"
-              required
-              placeholder="Last name"
-            />
-            <Form.Input
-              fluid
-              label="Phone"
-              type="number"
-              required
-              placeholder="Last name"
-            />
-          </Form.Group>
-        </Form>
-        <Button content="Submit" color="vk" size={"small"} />
       </Segment>
     </Container>
   );
