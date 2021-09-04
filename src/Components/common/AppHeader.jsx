@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, Input, Icon, Label, Dropdown } from "semantic-ui-react";
-import AppDropdonw from "../utils/AppDropdonw";
+import { Menu, Input, Icon, Label } from "semantic-ui-react";
 
 const AppHeader = () => {
   const [activeItem, setActive] = useState(false);
@@ -9,6 +8,8 @@ const AppHeader = () => {
   const handleClick = (e, name) => {
     setActive((preState) => ({ activeItem: name }));
   };
+
+  const cart = [1, 2, 3, 4];
 
   return (
     <div>
@@ -44,12 +45,15 @@ const AppHeader = () => {
           <Menu.Item>
             <Input icon="search" placeholder="Search..." />
           </Menu.Item>
-          <Menu.Item name="cart" onClick={handleClick}>
-            <Icon color="violet" name="shopping cart" />
-            <Label size="mini" icon="shopping cart" circular color="red">
-              {0}
-            </Label>
-          </Menu.Item>
+
+          <Link to="/cart">
+            <Menu.Item name="cart" onClick={handleClick}>
+              <Icon color="violet" name="shopping cart" />
+              <Label size="mini" icon="shopping cart" circular color="red">
+                {cart.length}
+              </Label>
+            </Menu.Item>
+          </Link>
         </Menu.Menu>
       </Menu>
     </div>
