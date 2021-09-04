@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, Input, Icon, Label } from "semantic-ui-react";
+import { Menu, Input, Icon, Label ,Popup} from "semantic-ui-react";
 
 const AppHeader = ({productLength}) => {
   const [activeItem, setActive] = useState(false);
@@ -30,11 +30,20 @@ const AppHeader = ({productLength}) => {
           />
         </Link>
 
-        <Link to="/auth">
+        <Link to="/register">
           <Menu.Item
-            name="auth"
-            active={activeItem === "auth"}
-            content="Register/Login"
+            name="register"
+            active={activeItem === "register"}
+            content="Register"
+            onClick={handleClick}
+          />
+        </Link>
+
+        <Link to="/login">
+          <Menu.Item
+            name="login"
+            active={activeItem === "login"}
+            content="Login"
             onClick={handleClick}
           />
         </Link>
@@ -46,7 +55,7 @@ const AppHeader = ({productLength}) => {
 
           <Link to="/cart">
             <Menu.Item name="cart" onClick={handleClick}>
-              <Icon color="violet" name="shopping cart" />
+              <Popup content='Cart page' trigger={<Icon color="violet" name="shopping cart" />} />
               <Label size="mini" icon="shopping cart" circular color="red">
                 {productLength}
               </Label>

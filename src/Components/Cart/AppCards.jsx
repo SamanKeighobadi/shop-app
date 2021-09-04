@@ -5,16 +5,16 @@ import AppCard from "./AppCard";
 const AppCards = ({ products }) => {
   return (
     <div>
-      <Grid>
+      <Grid verticalAlign={'middle'} centered>
         {products.map((product,index) => (
-          <div key={index}>
+          <Grid.Column computer={4} tablet={8} mobile={16} key={index}>
             <AppCard
               title={product.title}
               image={product.image}
               price={product.price}
               category={product.category}
             />
-          </div>
+          </Grid.Column>
         ))}
       </Grid>
     </div>

@@ -1,24 +1,19 @@
 import React from "react";
-import { Form, Button, Header } from "semantic-ui-react";
+import { Form, Button, Header, Input } from "semantic-ui-react";
 
 const Login = () => {
   return (
     <div>
-      <Form>
+      <Form >
         <Header content="Login" />
-        <Form.Input
-          label="Email"
-          placeholder="example@gmail.com"
-          icon="mail"
-          iconPosition="left"
-        />
-        <Form.Input
-          label="Password"
-          placeholder="*******"
-          icon="lock"
-          type="password"
-          iconPosition="left"
-        />
+        <Form.Field>
+          <label>Email:</label>
+          <input type="email" placeholder="Email" />
+        </Form.Field>
+        <Form.Field>
+          <label>Password:</label>
+          <input type='password' placeholder="password" />
+        </Form.Field>
         <Button content="Login" size="medium" color="vk" />
       </Form>
     </div>

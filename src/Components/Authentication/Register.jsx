@@ -6,19 +6,18 @@ const Register = () => {
     <div>
       <Form>
         <Header content="Register" />
-        <Form.Input label="Fullname" placeholder="fullname" icon="users" />
-        <Form.Input
-          label="Email"
-          icon="mail"
-          placeholder="example@gmail.com"
-          type="email"
-        />
-        <Form.Input
-          label="Lock"
-          icon="lock"
-          placeholder="********"
-          type="password"
-        />
+        <Form.Field>
+          <label>Fullname:</label>
+          <input placeholder='fullname' />
+        </Form.Field>
+        <Form.Field>
+          <label>Email:</label>
+          <input type={'email'} placeholder='fullname' />
+        </Form.Field>
+        <Form.Field>
+          <label>Password:</label>
+          <input type='password' placeholder='fullname' />
+        </Form.Field>
         <Button content="Register" color="vk" size="medium" />
       </Form>
     </div>

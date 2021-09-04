@@ -5,23 +5,21 @@ import Register from "./Register";
 
 const Authentication = () => {
   return (
-    <Container textAlign="center" >
-      <Segment size='huge'  color='violet'  stacked>
-        <Grid centered columns={2} relaxed="very" stackable>
-          <Grid.Row  verticalAlign='middle' centered>
-            <Grid.Column verticalAlign="middle">
-              <Login />
-            </Grid.Column>
+    <Segment  padded piled compact size="small" color="violet">
+      <Grid  columns={2} >
+        <Grid.Row stretched verticalAlign="middle">
+          <Grid.Column className>
+            <Login />
+          </Grid.Column>
 
-            <Grid.Column verticalAlign="middle">
-              <Register />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+          <Grid.Column>
+            <Register />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
 
-        <Divider vertical horizontal>or</Divider>
-      </Segment>
-    </Container>
+      <Divider vertical>or</Divider>
+    </Segment>
   );
 };
 

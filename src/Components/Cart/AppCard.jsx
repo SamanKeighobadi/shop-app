@@ -1,7 +1,16 @@
 import React from "react";
-import {Card,Image} from 'semantic-ui-react'
+import { useState } from "react/cjs/react.development";
+import { Card, Image, Label, Button, Icon } from "semantic-ui-react";
 
-const AppCard = ({title,image,price,category}) => {
+const AppCard = ({ title, image, price, category }) => {
+
+    const [product ,setProduct ]  = useState([])
+
+    const removeProductFromCart = (productInCart) => {
+        setProduct(product.filter(product => product !== productInCart))
+        console.log('Product Deleted from cart')
+    }
+
   return (
     <div>
       <Card color="violet" centered>
@@ -13,7 +22,14 @@ const AppCard = ({title,image,price,category}) => {
           </Card.Meta>
         </Card.Content>
         <Card.Content extra>
-                {price}          
+          <Label content={price} floating color="red" />
+          <Button
+            color={"red"}
+            size={"mini"}
+            floated="right"
+            content={<Icon name="trash" />}
+            onClick={() =>removeProductFromCart(product) }
+          />
         </Card.Content>
       </Card>
     </div>

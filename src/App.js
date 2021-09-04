@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import Authentication from "./Components/Authentication/Authentication";
+import Login from "./Components/Authentication/Login";
+import Register from "./Components/Authentication/Register";
 import AppCartPage from "./Components/Cart/AppCartPage";
 //? Import Mainlayouts
 import MailLayouts from "./Components/layouts/MailLayouts";
@@ -16,10 +17,8 @@ function App() {
     setCart(result);
   };
 
-
   return (
     <Fragment>
-
       <MailLayouts productLength={cart.length}>
         <Switch>
           <Route path="/" exact render={() => <h1>home</h1>} />
@@ -29,10 +28,13 @@ function App() {
               <AppShopPage addToCart={(product) => addToCart(product)} />
             )}
           />
-          <Route path="/auth" component={Authentication} />
-          <Route path="/cart" render={() => <AppCartPage productsInCart={cart} />} />
+          <Route
+            path="/cart"
+            render={() => <AppCartPage productsInCart={cart} />}
+          />
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
         </Switch>
-
       </MailLayouts>
     </Fragment>
   );
