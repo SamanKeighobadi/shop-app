@@ -1,22 +1,73 @@
 import React from "react";
-import { Form, Button, Header, Input } from "semantic-ui-react";
+import {
+  Grid,
+  Form,
+  Button,
+  Container,
+  Header,
+  Segment,
+} from "semantic-ui-react";
 
 const Login = () => {
+  const options = [
+    { key: "M", text: "Male", value: "male" },
+    { key: "F", text: "Female", value: "female" },
+  ];
+
   return (
-    <div>
-      <Form >
-        <Header content="Login" />
-        <Form.Field>
-          <label>Email:</label>
-          <input type="email" placeholder="Email" />
-        </Form.Field>
-        <Form.Field>
-          <label>Password:</label>
-          <input type='password' placeholder="password" />
-        </Form.Field>
-        <Button content="Login" size="medium" color="vk" />
-      </Form>
-    </div>
+    <Container style={{ marginTop: "4rem" }} >
+      <Segment color='violet' >
+        <Form>
+          <Header content="Login" size={"huge"} />
+          <Form.Group widths="equal">
+            <Form.Input
+              fluid
+              label="First name"
+              required
+              placeholder="First name"
+            />
+            <Form.Input
+              fluid
+              label="Last name"
+              required
+              placeholder="Last name"
+            />
+            <Form.Select
+              fluid
+              label="Gender"
+              options={options}
+              placeholder="Gender"
+            />
+          </Form.Group>
+        </Form>
+        <Form>
+          <Form.Group widths="equal">
+            <Form.Input
+              fluid
+              label="Email"
+              type="email"
+              required
+              placeholder="First name"
+            />
+            <Form.Input
+              fluid
+              label="Password"
+              type="password"
+              required
+              placeholder="Last name"
+            />
+            <Form.Input
+              fluid
+              label="Phone"
+              type="number"
+              required
+              placeholder="Last name"
+            />
+          </Form.Group>
+        </Form>
+        <Button content="Submit" color="vk" size={"small"} />
+      </Segment>
+    </Container>
   );
 };
 
