@@ -27,8 +27,8 @@ const SingleProductPage = () => {
         <Container style={{ marginTop: "3rem" }}>
           <Grid columns={2} textAlign='center'>
             <Grid.Column computer={6} tablet={8} mobile={16}>
-              <Header content={title} />
-              <Image src={image} size={"large"} />
+              <Header content={title} size='large' />
+              <Image src={image} size={"large"}  />
             </Grid.Column>
             <Grid.Column computer={6} tablet={8} mobile={16}>
               <SingleProductDetails
