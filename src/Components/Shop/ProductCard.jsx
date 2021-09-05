@@ -13,7 +13,7 @@ const ProductCard = ({
   addToCart,
 }) => {
   return (
-    <Card color="violet" centered>
+    <Card raised color="violet" centered>
       <Link to={`/product/${product_id}`}>
         <Image size="small" centered src={image} />
       </Link>

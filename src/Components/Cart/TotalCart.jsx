@@ -10,7 +10,7 @@ const TotalCart = ({ totalProduct }) => {
 
   return (
     <div>
-      <Segment>
+      <Segment compact color='red' raised >
         <Header content={` Total Price: ${total}`} icon="dollar" />
       </Segment>
     </div>
