@@ -1,5 +1,6 @@
 import React from 'react';
-import {Card,Grid} from 'semantic-ui-react'
+import {Grid} from 'semantic-ui-react'
+import TotalCart from './TotalCart'
 import AppCards from './AppCards';
 
 const AppCartPage = ({productsInCart,removeProduct}) => {
@@ -8,10 +9,16 @@ const AppCartPage = ({productsInCart,removeProduct}) => {
 
     return (
         <div>
-            <Grid>
-                <Grid.Row columns={1}>
+            <Grid >
+                <Grid.Row >
                     <Grid.Column>
                         <AppCards products={productsInCart} removeProduct={removeProduct} />
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        <TotalCart
+                         />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

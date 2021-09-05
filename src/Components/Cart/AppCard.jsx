@@ -1,14 +1,14 @@
 import React from "react";
-import { useState } from "react/cjs/react.development";
 import { Card, Image, Label, Button, Icon } from "semantic-ui-react";
+import useTotalProduct from "../customHooks/useTotalProduct";
 
-const AppCard = ({ title, image, price, category,product ,removeProduct}) => {
-
-    
+const AppCard = ({ title, image, price, category, product,totalProduct, removeProduct }) => {
+ 
+useTotalProduct(totalProduct)
 
   return (
     <div>
-      <Card color="violet" centered>
+      <Card color="violet" style={{ marginTop: "2rem" }} centered>
         <Image size="small" centered src={image} />
         <Card.Content textAlign="right">
           <Card.Header content={title.slice(0, 15)} />

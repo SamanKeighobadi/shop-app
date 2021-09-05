@@ -17,6 +17,8 @@ function App() {
     setCart(result);
   };
 
+ 
+
   const removeProduct = (productToRemove) => {
     setCart(cart.filter((product) => product !== productToRemove));
   };
