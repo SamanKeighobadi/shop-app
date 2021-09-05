@@ -2,8 +2,6 @@ import React from "react";
 import { Card, Image, Label, Button, Icon } from "semantic-ui-react";
 
 const AppCard = ({ title, image, price, category, product, removeProduct }) => {
- 
-
   return (
     <div>
       <Card color="violet" style={{ marginTop: "2rem" }} centered>

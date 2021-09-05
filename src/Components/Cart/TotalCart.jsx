@@ -1,5 +1,5 @@
 import React from 'react';
-import {Segment} from 'semantic-ui-react'
+import {Segment,Header} from 'semantic-ui-react'
 import useTotalProduct from "../customHooks/useTotalProduct";
 
 
@@ -9,8 +9,8 @@ const TotalCart = ({totalProduct}) => {
 
     return (
         <div>
-            <Segment placeholder>
-                <h1>{total}</h1>
+            <Segment >
+                <Header content={` Total Price: ${total}`} icon='dollar'  />
             </Segment>
         </div>
     );
