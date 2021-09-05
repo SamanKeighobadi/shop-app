@@ -1,9 +1,21 @@
 import React from 'react';
+import {useParams} from 'react-router-dom'
+import useProducts from '../customHooks/useProducts'
+import Loading from '../common/AppLoading'
 
 const SingleProductPage = () => {
+
+    const {productId} = useParams()
+
+    const {data:product,loading} = useProducts(`https://fakestoreapi.com/products/${productId}`)
+
     return (
         <div>
-            <h1>SingleProductPage</h1>
+        {loading? (<Loading />):(
+            <div>
+                {product.title}
+            </div>
+        )}
         </div>
     );
 };

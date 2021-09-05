@@ -24,6 +24,7 @@ const ProductCards = ({addToCart}) => {
                 category={product.category}
                 price={product.price}
                 product={product}
+                product_id={product.id}
                 addToCart={() => addToCart(product)}
               />
             </Grid.Column>

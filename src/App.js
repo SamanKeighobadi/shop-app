@@ -7,6 +7,7 @@ import AppCartPage from "./Components/Cart/AppCartPage";
 //? Import Mainlayouts
 import MailLayouts from "./Components/layouts/MailLayouts";
 import AppShopPage from "./Components/Shop/AppShopPage";
+import SingleProductPage from "./Components/SingleProductPage/SingleProductPage";
 //? Import Components
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/product/:productId" component={SingleProductPage} />
         </Switch>
       </MailLayouts>
     </Fragment>

@@ -5,8 +5,6 @@ import AppCards from './AppCards';
 
 const AppCartPage = ({productsInCart,removeProduct}) => {
    
-    
-
     return (
         <div>
             <Grid >

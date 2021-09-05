@@ -1,9 +1,10 @@
 import React from "react";
 import { Card, Image, Label, Button, Icon } from "semantic-ui-react";
+import {Link} from 'react-router-dom'
 
-const AppCard = ({ title, image, price, category, product, removeProduct }) => {
+const AppCard = ({ title, image, price,product_id, category, product, removeProduct }) => {
   return (
-    <div>
+    <Link to={`/product/${product_id}`}>
       <Card color="violet" style={{ marginTop: "2rem" }} centered>
         <Image size="small" centered src={image} />
         <Card.Content textAlign="right">
@@ -23,7 +24,7 @@ const AppCard = ({ title, image, price, category, product, removeProduct }) => {
           />
         </Card.Content>
       </Card>
-    </div>
+    </Link>
   );
 };
 

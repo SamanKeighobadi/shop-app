@@ -14,6 +14,7 @@ const AppCards = ({ products ,removeProduct}) => {
               price={product.price}
               product={product}
               totalProduct={products}
+              product_id={product.id}
               category={product.category}
               removeProduct={removeProduct}
             />
