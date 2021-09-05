@@ -1,23 +1,47 @@
-import React from 'react';
-import {useParams} from 'react-router-dom'
-import useProducts from '../customHooks/useProducts'
-import Loading from '../common/AppLoading'
+import React from "react";
+//? Import React Router
+import { useParams } from "react-router-dom";
+//? Import Custom Hook
+import useProducts from "../customHooks/useProducts";
+//? Import Loading
+import Loading from "../common/AppLoading";
+//? React Semantci UI Components
+import { Grid, Container, Header, Image } from "semantic-ui-react";
+import SingleProductDetails from "./SingleProductDetails";
 
 const SingleProductPage = () => {
+  //* useParams hook
+  const { productId } = useParams();
+  //* Custom hook
+  const { data: product, loading } = useProducts(
+    `https://fakestoreapi.com/products/${productId}`
+  );
 
-    const {productId} = useParams()
+  const { title, image, description, price, category } = product;
 
-    const {data:product,loading} = useProducts(`https://fakestoreapi.com/products/${productId}`)
-
-    return (
-        <div>
-        {loading? (<Loading />):(
-            <div>
-                {product.title}
-            </div>
-        )}
-        </div>
-    );
+  return (
+    <div>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Container style={{ marginTop: "3rem" }}>
+          <Grid columns={2} textAlign='center'>
+            <Grid.Column computer={6} tablet={8} mobile={16}>
+              <Header content={title} />
+              <Image src={image} size={"large"} />
+            </Grid.Column>
+            <Grid.Column computer={6} tablet={8} mobile={16}>
+              <SingleProductDetails
+                price={price}
+                category={category}
+                description={description}
+              />
+            </Grid.Column>
+          </Grid>
+        </Container>
+      )}
+    </div>
+  );
 };
 
 export default SingleProductPage;
