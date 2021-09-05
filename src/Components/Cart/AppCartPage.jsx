@@ -18,6 +18,7 @@ const AppCartPage = ({productsInCart,removeProduct}) => {
                 <Grid.Row>
                     <Grid.Column>
                         <TotalCart
+                        totalProduct={productsInCart}
                          />
                     </Grid.Column>
                 </Grid.Row>

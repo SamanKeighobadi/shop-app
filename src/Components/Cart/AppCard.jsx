@@ -1,10 +1,8 @@
 import React from "react";
 import { Card, Image, Label, Button, Icon } from "semantic-ui-react";
-import useTotalProduct from "../customHooks/useTotalProduct";
 
-const AppCard = ({ title, image, price, category, product,totalProduct, removeProduct }) => {
+const AppCard = ({ title, image, price, category, product, removeProduct }) => {
  
-useTotalProduct(totalProduct)
 
   return (
     <div>

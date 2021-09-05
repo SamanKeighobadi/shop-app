@@ -1,11 +1,16 @@
 import React from 'react';
 import {Segment} from 'semantic-ui-react'
+import useTotalProduct from "../customHooks/useTotalProduct";
 
-const TotalCart = () => {
+
+const TotalCart = ({totalProduct}) => {
+
+    const {total} = useTotalProduct(totalProduct)
+
     return (
         <div>
             <Segment placeholder>
-                <h1>Totoalcart</h1>
+                <h1>{total}</h1>
             </Segment>
         </div>
     );
