@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "semantic-ui-react";
 import AppCard from "./AppCard";
 
-const AppCards = ({ products }) => {
+const AppCards = ({ products ,removeProduct}) => {
   return (
     <div>
       <Grid verticalAlign={'middle'} centered>
@@ -12,7 +12,9 @@ const AppCards = ({ products }) => {
               title={product.title}
               image={product.image}
               price={product.price}
+              product={product}
               category={product.category}
+              removeProduct={removeProduct}
             />
           </Grid.Column>
         ))}

@@ -13,8 +13,12 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    const result = [...cart, product];
+    const result = [...cart, { ...product }];
     setCart(result);
+  };
+
+  const removeProduct = (productToRemove) => {
+    setCart(cart.filter((product) => product !== productToRemove));
   };
 
   return (
@@ -30,10 +34,15 @@ function App() {
           />
           <Route
             path="/cart"
-            render={() => <AppCartPage productsInCart={cart} />}
+            render={() => (
+              <AppCartPage
+                productsInCart={cart}
+                removeProduct={(product) => removeProduct(product)}
+              />
+            )}
           />
-          <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
         </Switch>
       </MailLayouts>
     </Fragment>

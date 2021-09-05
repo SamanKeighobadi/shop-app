@@ -2,7 +2,7 @@ import React from 'react';
 import {Card,Grid} from 'semantic-ui-react'
 import AppCards from './AppCards';
 
-const AppCartPage = ({productsInCart}) => {
+const AppCartPage = ({productsInCart,removeProduct}) => {
    
     
 
@@ -11,7 +11,7 @@ const AppCartPage = ({productsInCart}) => {
             <Grid>
                 <Grid.Row columns={1}>
                     <Grid.Column>
-                        <AppCards products={productsInCart} />
+                        <AppCards products={productsInCart} removeProduct={removeProduct} />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
