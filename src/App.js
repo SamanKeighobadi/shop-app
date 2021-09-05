@@ -1,14 +1,16 @@
 import { Fragment } from "react";
 import { useState } from "react";
+//? Import React Router
 import { Route, Switch } from "react-router-dom";
+//? Import Mainlayouts
+import MailLayouts from "./Components/layouts/MailLayouts";
+//? Import Components
 import Login from "./Components/Authentication/Login";
 import Register from "./Components/Authentication/Register";
 import AppCartPage from "./Components/Cart/AppCartPage";
-//? Import Mainlayouts
-import MailLayouts from "./Components/layouts/MailLayouts";
+import PageNotFound from "./Components/common/PageNotFound";
 import AppShopPage from "./Components/Shop/AppShopPage";
 import SingleProductPage from "./Components/SingleProductPage/SingleProductPage";
-//? Import Components
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -17,8 +19,6 @@ function App() {
     const result = [...cart, { ...product }];
     setCart(result);
   };
-
- 
 
   const removeProduct = (productToRemove) => {
     setCart(cart.filter((product) => product !== productToRemove));
@@ -47,6 +47,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/product/:productId" component={SingleProductPage} />
+          <Route component={PageNotFound} />
         </Switch>
       </MailLayouts>
     </Fragment>

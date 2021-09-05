@@ -1,7 +1,6 @@
-.card-header{
-   font-size: 1rem;
-   color:green
+.page-container{
+   margin: 200px auto;
 }
-.prodcut{
-   margin: 2rem;
+h1{
+   font-size: 4rem !important;
 }
