@@ -1,4 +1,5 @@
-import React from "react";
+import React,{Fragment} from "react";
+//? React Semantic UI Components
 import {
   Form,
   Button,
@@ -7,13 +8,17 @@ import {
   Segment,
   Checkbox,
 } from "semantic-ui-react";
+//? Import React Helmet
+import {Helmet} from 'react-helmet'
 
 const Login = () => {
   
 
   return (
-    
-
+    <Fragment>
+    <Helmet>
+        <title>Login Page</title>
+    </Helmet>      
     <Container style={{ marginTop: "4rem" }}>
       <Segment color="violet">
         <Form>
@@ -33,6 +38,8 @@ const Login = () => {
         </Form>
       </Segment>
     </Container>
+
+    </Fragment>    
   );
 };
 
