@@ -3,7 +3,7 @@ import { Button, Icon } from "semantic-ui-react";
 
 const ProductCardButton = ({ product,addToCart }) => {
   
-
+  
   return (
     <div>
       <Button

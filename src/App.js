@@ -11,6 +11,7 @@ import AppCartPage from "./Components/Cart/AppCartPage";
 import PageNotFound from "./Components/common/PageNotFound";
 import AppShopPage from "./Components/Shop/AppShopPage";
 import SingleProductPage from "./Components/SingleProductPage/SingleProductPage";
+import AppHome from "./Components/Home/AppHome";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -28,7 +29,7 @@ function App() {
     <Fragment>
       <MailLayouts productLength={cart.length}>
         <Switch>
-          <Route path="/" exact render={() => <h1>home</h1>} />
+          <Route path="/" exact component={AppHome} />
           <Route
             path="/shop"
             render={() => (
