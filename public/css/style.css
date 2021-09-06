@@ -4,3 +4,6 @@
 h1{
    font-size: 4rem !important;
 }
+.card-image{
+   height: 250px !important;
+}

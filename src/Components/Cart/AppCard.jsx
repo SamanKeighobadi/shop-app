@@ -16,7 +16,7 @@ const AppCard = ({
   return (
     <Card color="violet" style={{ marginTop: "2rem" }} centered>
       <Link to={`/product/${product_id}`}>
-        <Image size="small" centered src={image} />
+        <Image className='card-image' size="small" centered src={image} />
       </Link>
       <Card.Content textAlign="right">
         <Card.Header content={title.slice(0, 15)} />

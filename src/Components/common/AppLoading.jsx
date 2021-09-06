@@ -5,7 +5,7 @@ import {Container} from 'semantic-ui-react'
 const AppLoading = () => {
     return (
         <div>
-            <Container textAlign='center' >
+            <Container textAlign='center' style={{marginTop:'3rem'}} >
                 <ClipLoader size={80}  />
             </Container>
         </div>
