@@ -3,11 +3,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 //? Import Custom Hook
 import useProducts from "../customHooks/useProducts";
-//? Import Loading
+//? Import custom components
 import Loading from "../common/AppLoading";
+import SingleProductDetails from "./SingleProductDetails";
 //? React Semantci UI Components
 import { Grid, Container, Header, Image } from "semantic-ui-react";
-import SingleProductDetails from "./SingleProductDetails";
 
 const SingleProductPage = () => {
   //* useParams hook

@@ -1,8 +1,11 @@
 import React from "react";
+//? Import Custom hook
 import useProducts from "../customHooks/useProducts";
-import ProductCard from "./ProductCard";
-import { Grid } from "semantic-ui-react";
+//? Import Custom Components
 import AppLoading from "../common/AppLoading";
+import ProductCard from "./ProductCard";
+
+import { Grid } from "semantic-ui-react";
 
 const ProductCards = ({addToCart}) => {
   

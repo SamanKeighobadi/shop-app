@@ -1,5 +1,7 @@
 import React from 'react';
+//? react spinners
 import {ClipLoader} from 'react-spinners'
+//? Semantic UI Component
 import {Container} from 'semantic-ui-react'
 
 const AppLoading = () => {

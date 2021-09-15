@@ -1,6 +1,7 @@
 import React from "react";
 //? React Semantic UI components
 import { Grid } from "semantic-ui-react";
+//? Custom Component
 import AppCard from "./AppCard";
 
 const AppCards = ({ products, removeProduct }) => {

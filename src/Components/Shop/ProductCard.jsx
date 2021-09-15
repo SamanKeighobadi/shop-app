@@ -1,6 +1,9 @@
 import React from "react";
+//? React Semantic UI Components
 import { Card, Image, Label } from "semantic-ui-react";
+
 import { Link } from "react-router-dom";
+
 import ProductCardButton from "./ProductCardButton";
 
 const ProductCard = ({

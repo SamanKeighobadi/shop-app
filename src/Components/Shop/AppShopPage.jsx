@@ -1,9 +1,10 @@
 import React from "react";
 //? React Semantic UI Components
 import { Container, Header } from "semantic-ui-react";
-import ProductCards from "./ProductCards";
 //? Import React Helmet
 import {Helmet} from 'react-helmet'
+
+import ProductCards from "./ProductCards";
 
 const AppShopPage = ({ addToCart }) => {
   return (
