@@ -1,53 +1,26 @@
-import { useState } from "react";
 //? React Semantic UI Components
 import { Menu, Input, Icon, Label, Popup } from "semantic-ui-react";
 //?Import React Router
 import { Link } from "react-router-dom";
 
 const AppHeader = ({ productLength }) => {
-  const [activeItem, setActive] = useState(false);
-
-  const handleClick = (e, name) => {
-    setActive((preState) => ({ activeItem: name }));
-  };
-
   return (
     <div>
       <Menu stackable>
         <Link to="/">
-          <Menu.Item
-            name="home"
-            active={activeItem === "home"}
-            content="Home"
-            onClick={handleClick}
-          />
+          <Menu.Item name="home" content="Home" />
         </Link>
 
         <Link to="/shop">
-          <Menu.Item
-            name="shop"
-            active={activeItem === "shop"}
-            content="Shop"
-            onClick={handleClick}
-          />
+          <Menu.Item name="shop" content="Shop" />
         </Link>
 
         <Link to="/register">
-          <Menu.Item
-            name="register"
-            active={activeItem === "register"}
-            content="Register"
-            onClick={handleClick}
-          />
+          <Menu.Item name="register" content="Register" />
         </Link>
 
         <Link to="/login">
-          <Menu.Item
-            name="login"
-            active={activeItem === "login"}
-            content="Login"
-            onClick={handleClick}
-          />
+          <Menu.Item name="login" content="Login" />
         </Link>
 
         <Menu.Menu position="right">
@@ -56,7 +29,7 @@ const AppHeader = ({ productLength }) => {
           </Menu.Item>
 
           <Link to="/cart">
-            <Menu.Item name="cart" onClick={handleClick}>
+            <Menu.Item name="cart">
               <Popup
                 content="Cart page"
                 trigger={<Icon color="violet" name="shopping cart" />}

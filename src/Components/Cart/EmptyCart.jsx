@@ -7,7 +7,12 @@ const EmptyCart = () => {
     <div>
       <Grid textAlign="center" style={{ marginTop: "4rem" }}>
         <Grid.Column verticalAlign="middle">
-          <Header content="Your Cart is Empty" color="red" size="huge" />
+          <Header
+            color="red"
+            content=" Your Cart is Empty"
+            size="huge"
+            style={{ fontSize: "4rem" }}
+          />
         </Grid.Column>
       </Grid>
     </div>
