@@ -1,10 +1,11 @@
 
 # Shop App with React.js and Semantic UI 
 
-
-<ol>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>Third item</li>
-  <li>Fourth item</li>
-</ol>
+## Dependences used:
+<ul>
+  <li>Axios</li>
+  <li>React Helmet</li>
+  <li>React Spinners</li>
+  <li>React Router Dom</li>
+  <li> Semantic UI </li>
+</ul>
