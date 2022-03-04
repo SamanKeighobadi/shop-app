@@ -3,7 +3,7 @@ import React from "react";
 import { Card, Image, Label } from "semantic-ui-react";
 
 import { Link } from "react-router-dom";
-
+// import components
 import ProductCardButton from "./ProductCardButton";
 
 const ProductCard = ({

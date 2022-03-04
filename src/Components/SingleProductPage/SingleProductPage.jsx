@@ -8,6 +8,8 @@ import Loading from "../common/AppLoading";
 import SingleProductDetails from "./SingleProductDetails";
 //? React Semantci UI Components
 import { Grid, Container, Header, Image } from "semantic-ui-react";
+//? Import React Helmet
+import {Helmet} from 'react-helmet'
 
 const SingleProductPage = () => {
   //* useParams hook
@@ -21,6 +23,9 @@ const SingleProductPage = () => {
 
   return (
     <div>
+    <Helmet>
+      <title>{title}</title>
+    </Helmet>
       {loading ? (
         <Loading />
       ) : (
