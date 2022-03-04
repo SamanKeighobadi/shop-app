@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 //? Import Mainlayouts
 import MailLayouts from "./Components/layouts/MailLayouts";
+//? React toastify
+import { ToastContainer, toast } from "react-toastify";
 //? Import Components
 import Login from "./Components/Authentication/Login";
 import Register from "./Components/Authentication/Register";
@@ -19,10 +21,20 @@ function App() {
   const addToCart = (product) => {
     const result = [...cart, { ...product }];
     setCart(result);
+    toast.success("Product successfully added to cart", {
+      position: "bottom-right",
+      autoClose: 3000,
+      theme: "colored",
+    });
   };
 
   const removeProduct = (productToRemove) => {
     setCart(cart.filter((product) => product !== productToRemove));
+    toast.success("Product successfully removed from cart", {
+      position: "bottom-right",
+      autoClose: 3000,
+      theme: "colored",
+    });
   };
 
   return (
@@ -51,6 +63,7 @@ function App() {
           <Route component={PageNotFound} />
         </Switch>
       </MailLayouts>
+      <ToastContainer />
     </Fragment>
   );
 }
