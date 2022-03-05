@@ -3,6 +3,8 @@ import React from "react";
 import { Grid } from "semantic-ui-react";
 //? Custom Component
 import AppCard from "./AppCard";
+//? Prop Types
+import PropTypes from 'prop-types'
 
 const AppCards = ({ products, removeProduct }) => {
   return (
@@ -26,5 +28,10 @@ const AppCards = ({ products, removeProduct }) => {
     </div>
   );
 };
+
+AppCards.propTypes = {
+  products:PropTypes.array,
+  removeProduct:PropTypes.func
+}
 
 export default AppCards;

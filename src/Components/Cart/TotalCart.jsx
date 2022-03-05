@@ -3,6 +3,8 @@ import React from "react";
 import { Segment, Header } from "semantic-ui-react";
 //? Import Custom Hooks
 import useTotalProduct from "../customHooks/useTotalProduct";
+//? Prop Types
+import PropTypes from 'prop-types'
 
 const TotalCart = ({ totalProduct }) => {
   //* Custom Hook
@@ -16,5 +18,9 @@ const TotalCart = ({ totalProduct }) => {
     </div>
   );
 };
+
+TotalCart.propTypes = {
+  totalProduct:PropTypes.array
+}
 
 export default TotalCart;

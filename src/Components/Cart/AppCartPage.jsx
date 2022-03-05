@@ -5,6 +5,8 @@ import { Grid } from "semantic-ui-react";
 import TotalCart from "./TotalCart";
 import AppCards from "./AppCards";
 import EmptyCart from "./EmptyCart";
+//? Prop Types 
+import PropTypes from 'prop-types'
 
 const AppCartPage = ({ productsInCart, removeProduct }) => {
   return (
@@ -31,5 +33,10 @@ const AppCartPage = ({ productsInCart, removeProduct }) => {
     </div>
   );
 };
+
+AppCartPage.propTypes ={
+  removeProduct:PropTypes.func,
+  productsInCart:PropTypes.array
+}
 
 export default AppCartPage;

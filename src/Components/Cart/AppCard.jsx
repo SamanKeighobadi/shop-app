@@ -1,8 +1,10 @@
 import React from "react";
 //? React Semantic UI Components
 import { Card, Image, Label, Button, Icon } from "semantic-ui-react";
-//? Import React Router
+//?  React Router DOM
 import { Link } from "react-router-dom";
+//? Prop Types
+import PropTypes from 'prop-types'
 
 const AppCard = ({
   title,
@@ -37,5 +39,14 @@ const AppCard = ({
     </Card>
   );
 };
+
+AppCard.propTypes = {
+  title:PropTypes.string,
+  image:PropTypes.string,
+  category:PropTypes.string,
+  price:PropTypes.number,
+  removeProduct:PropTypes.string,
+  product:PropTypes.object
+}
 
 export default AppCard;
