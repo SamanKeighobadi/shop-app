@@ -41,7 +41,7 @@ function App() {
     <Fragment>
       <MailLayouts productLength={cart.length}>
         <Switch>
-          <Route path="/" exact component={AppHome} />
+          <Route path="/" exact render={() => <AppHome addToCart={(product) => addToCart(product)} />} />
           <Route
             path="/shop"
             render={() => (

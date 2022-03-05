@@ -3,18 +3,14 @@ import React from "react";
 import useProducts from "../customHooks/useProducts";
 //? Import Custom Components
 import AppLoading from "../common/AppLoading";
-import ProductCard from "./ProductCard";
-//? Prop Types 
-import PropTypes from 'prop-types'
-
 import { Grid } from "semantic-ui-react";
+import ProductCard from "../Shop/ProductCard";
 
-const ProductCards = ({addToCart}) => {
-  
+const HomeProductList = ({addToCart}) => {
   const { data: products, loading } = useProducts(
     "https://fakestoreapi.com/products"
   );
-  
+  console.log(products);
 
   return (
     <div>
@@ -22,7 +18,7 @@ const ProductCards = ({addToCart}) => {
         <AppLoading />
       ) : (
         <Grid verticalAlign={"middle"} centered>
-          {products.map((product, index) => (
+          {products.slice(0,8).map((product, index) => (
             <Grid.Column computer={4} tablet={8} mobile={16} key={index}>
               <ProductCard
                 title={product.title}
@@ -41,8 +37,4 @@ const ProductCards = ({addToCart}) => {
   );
 };
 
-ProductCards.propTypes = {
-  addToCart:PropTypes.func
-}
-
-export default ProductCards;
+export default HomeProductList;

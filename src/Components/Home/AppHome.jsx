@@ -3,10 +3,12 @@ import React from "react";
 import { Header, Container, Segment } from "semantic-ui-react";
 //? Import React Helmet
 import {Helmet} from 'react-helmet'
-// import components
-import AppSlider from "../utils/AppSlider";
+//? import components
+import HomeProductList from "./HomeProductList";
+//? Prop Types 
+import PorpTypes from 'prop-types'
 
-const AppHome = () => {
+const AppHome = ({addToCart}) => {
   return (
     <Container fluid textAlign="center">
     <Helmet>
@@ -25,9 +27,13 @@ const AppHome = () => {
           </p>
         </Container>
       </Segment>
-      {/* <AppSlider /> */}
+      <HomeProductList addToCart={addToCart} />
     </Container>
   );
 };
+
+AppHome.propTypes = {
+  addToCart:PorpTypes.func
+}
 
 export default AppHome;
