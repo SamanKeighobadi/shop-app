@@ -56,13 +56,6 @@ const Register = () => {
                 required
                 placeholder="Last name"
               />
-              <Form.Input
-                fluid
-                label="Phone"
-                type="number"
-                required
-                placeholder="Last name"
-              />
             </Form.Group>
           </Form>
           <Button content="Submit" color="vk" size={"small"} />
