@@ -1,5 +1,4 @@
-import { Fragment } from "react";
-import { useState } from "react";
+import { useState, Fragment, Suspense,lazy } from "react";
 //? Import React Router
 import { Route, Switch } from "react-router-dom";
 //? Import Mainlayouts
@@ -7,13 +6,14 @@ import MailLayouts from "./Components/layouts/MailLayouts";
 //? React toastify
 import { ToastContainer, toast } from "react-toastify";
 //? Import Components
-import Login from "./Components/Authentication/Login";
-import Register from "./Components/Authentication/Register";
-import AppCartPage from "./Components/Cart/AppCartPage";
-import PageNotFound from "./Components/common/PageNotFound";
-import AppShopPage from "./Components/Shop/AppShopPage";
-import SingleProductPage from "./Components/SingleProductPage/SingleProductPage";
-import AppHome from "./Components/Home/AppHome";
+const Login = lazy(() => import('./Components/Authentication/Login'))
+const Register = lazy(() => import('./Components/Authentication/Register'))
+const AppCartPage = lazy(() => import('./Components/Cart/AppCartPage'))
+const PageNotFound = lazy(() => import("./Components/common/PageNotFound"))
+const AppShopPage = lazy(() => import("./Components/Shop/AppShopPage"))
+const SingleProductPage = lazy(() => import("./Components/SingleProductPage/SingleProductPage"))
+const AppHome = lazy(() => import("./Components/Home/AppHome"))
+const AppLoading = lazy(() => import("./Components/common/AppLoading"))
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -38,10 +38,17 @@ function App() {
   };
 
   return (
-    <Fragment>
+    <Suspense fallback={<div><AppLoading /></div>}>
+      <Fragment>
       <MailLayouts productLength={cart.length}>
         <Switch>
-          <Route path="/" exact render={() => <AppHome addToCart={(product) => addToCart(product)} />} />
+          <Route
+            path="/"
+            exact
+            render={() => (
+              <AppHome addToCart={(product) => addToCart(product)} />
+            )}
+          />
           <Route
             path="/shop"
             render={() => (
@@ -65,6 +72,7 @@ function App() {
       </MailLayouts>
       <ToastContainer />
     </Fragment>
+    </Suspense>
   );
 }
 

@@ -1,14 +1,17 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { render } from "react-dom";
 import "semantic-ui-css/semantic.min.css";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
 
+const AppLoading = React.lazy(() => import("./Components/common/AppLoading"));
+const App = React.lazy(() => import('./App'))
 
 render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Suspense fallback={<AppLoading />}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Suspense>,
   document.getElementById("root")
 );
