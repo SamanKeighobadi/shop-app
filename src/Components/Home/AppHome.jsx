@@ -6,7 +6,6 @@ import {Helmet} from 'react-helmet'
 // import components
 import AppSlider from "../utils/AppSlider";
 
-
 const AppHome = () => {
   return (
     <Container fluid textAlign="center">
@@ -15,7 +14,7 @@ const AppHome = () => {
         Shop App
       </title>
     </Helmet>
-      {/* <Segment placeholder>
+      <Segment placeholder>
         <Header content="Home Page" size="huge" />
         <Container textAlign="justified" style={{ width: "30vw" }}>
           <p>
@@ -25,8 +24,8 @@ const AppHome = () => {
             eiusmod laborum mollit velit velit
           </p>
         </Container>
-      </Segment> */}
-      <AppSlider />
+      </Segment>
+      {/* <AppSlider /> */}
     </Container>
   );
 };
