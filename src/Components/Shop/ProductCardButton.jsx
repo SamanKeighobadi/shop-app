@@ -1,9 +1,10 @@
 import React from "react";
 //? React Semantic UI Components
 import { Button, Icon } from "semantic-ui-react";
+//? Prop Types
+import PropTypes from 'prop-types'
 
 const ProductCardButton = ({ product,addToCart }) => {
-  
   
   return (
     <div>
@@ -22,5 +23,10 @@ const ProductCardButton = ({ product,addToCart }) => {
     </div>
   );
 };
+
+ProductCardButton.propTypes = {
+  product:PropTypes.object,
+  addToCart:PropTypes.func
+}
 
 export default ProductCardButton;

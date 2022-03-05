@@ -5,6 +5,8 @@ import { Container, Header } from "semantic-ui-react";
 import {Helmet} from 'react-helmet'
 
 import ProductCards from "./ProductCards";
+// Prop Types 
+import PropTypes from 'prop-types'
 
 const AppShopPage = ({ addToCart }) => {
   return (
@@ -24,5 +26,9 @@ const AppShopPage = ({ addToCart }) => {
     </>
   );
 };
+
+AppShopPage.propTypes ={
+  addToCart:PropTypes.func
+}
 
 export default AppShopPage;

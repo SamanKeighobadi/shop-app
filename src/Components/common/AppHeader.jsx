@@ -2,6 +2,8 @@
 import { Menu, Input, Icon, Label, Popup } from "semantic-ui-react";
 //?Import React Router
 import { Link } from "react-router-dom";
+//? Prop Types
+import PropTypes from 'prop-types'
 
 const AppHeader = ({ productLength }) => {
   return (
@@ -44,5 +46,9 @@ const AppHeader = ({ productLength }) => {
     </div>
   );
 };
+
+AppHeader.propTypes = {
+  productLength:PropTypes.number
+}
 
 export default AppHeader;
