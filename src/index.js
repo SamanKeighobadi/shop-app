@@ -8,7 +8,7 @@ const AppLoading = React.lazy(() => import("./Components/common/AppLoading"));
 const App = React.lazy(() => import('./App'))
 
 render(
-  <Suspense fallback={<AppLoading />}>
+  <Suspense fallback={<div>Loading...</div>}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
