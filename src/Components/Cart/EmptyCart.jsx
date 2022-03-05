@@ -16,9 +16,11 @@ const EmptyCart = () => {
         <Link to='/shop'>
         <Button size='tiny'  color='violet' >Products</Button>
         </Link>
+        <Link to={"/"}>
         <Button basic color='violet' size='tiny'>
           Home
         </Button>
+        </Link>
         </Container>
         </Grid.Column>
       </Grid>
