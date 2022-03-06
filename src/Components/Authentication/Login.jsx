@@ -6,7 +6,6 @@ import {
   Container,
   Header,
   Segment,
-  Checkbox,
 } from "semantic-ui-react";
 //? Import React Helmet
 import { Helmet } from "react-helmet";

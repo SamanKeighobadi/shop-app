@@ -16,15 +16,15 @@ export const registerSchema = yup.object().shape({
   email: yup
     .string()
     .email("Email is no valid")
-    .required("This field is required")
+    .required("Email  is required")
     .trim(),
   password: yup
     .string()
-    .required("This filed is required")
+    .required("Password  is required")
     .min(5, "least tna 5 char")
     .max(120, "more than 120 char")
     .trim(),
-  gender: yup
+  rules: yup
     .boolean()
-    .oneOf(["male", "female"], "you should choice on of them"),
+    .oneOf([true], "Must accept our terms and conditioans"),
 });
