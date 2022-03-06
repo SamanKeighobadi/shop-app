@@ -13,13 +13,13 @@ import { Helmet } from "react-helmet";
 import { Formik } from "formik";
 import { registerSchema } from "./Validation/RegisterValidationSchema";
 
-const options = [
-  { id: 1, text: "", value: "" },
-  { id: 2, text: "Male", value: "male" },
-  { id: 3, text: "Female", value: "female" },
-];
-
 const Register = () => {
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleShowPassword = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   return (
     <Fragment>
       <Helmet>
@@ -112,7 +112,7 @@ const Register = () => {
                   >
                     <lable>password:</lable>
                     <input
-                      type={"password"}
+                      type={showPassword ? "text" : "password"}
                       placeholder="First name"
                       name="password"
                       onChange={handleChange}
@@ -130,24 +130,29 @@ const Register = () => {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    margin: "0 8px",
+                    
                   }}
                 >
-                  <label>I agree to the Terms and Conditions</label>
-                  <input
-                    type="checkbox"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.rules}
-                    name="rules"
-                    label="I agree to the Terms and Conditions"
-                  />
+                  <div style={{display:"flex",alignItems:"center"}}>
+                    <label>I agree to the Terms and Conditions</label>
+                    <input
+                      type="checkbox"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.rules}
+                      name="rules"
+                    />
+                  </div>
+                  <div style={{display:"flex",alignItems:"center",marginLeft:"12px"}}>
+                    <lable>Show Password</lable>
+                    <input type={'checkbox'} onClick={handleShowPassword} />
+                  </div>
                 </div>
-                  {touched.rules && errors.rules ? (
-                    <div style={{ color: "#9f3a38", padding: "4px 2px", }}>
-                      {errors.rules}
-                    </div>
-                  ) : null}
+                {touched.rules && errors.rules ? (
+                  <div style={{ color: "#9f3a38", padding: "4px 2px" }}>
+                    {errors.rules}
+                  </div>
+                ) : null}
                 <Button content="Submit" color="vk" size={"small"} />
               </Form>
             )}

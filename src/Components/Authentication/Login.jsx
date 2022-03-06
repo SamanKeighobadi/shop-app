@@ -1,12 +1,6 @@
 import React, { Fragment } from "react";
 //? React Semantic UI Components
-import {
-  Form,
-  Button,
-  Container,
-  Header,
-  Segment,
-} from "semantic-ui-react";
+import { Form, Button, Container, Header, Segment } from "semantic-ui-react";
 //? Import React Helmet
 import { Helmet } from "react-helmet";
 //? Formik
@@ -14,6 +8,12 @@ import { Formik } from "formik";
 import { logniShcema } from "./Validation/LoginValidationSchema";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleShowPassword = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   return (
     <Fragment>
       <Helmet>
@@ -25,7 +25,7 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={logniShcema}
             onSubmit={(values) => {
-              alert(JSON.stringify(values))
+              alert(JSON.stringify(values));
             }}
           >
             {({
@@ -38,7 +38,9 @@ const Login = () => {
             }) => (
               <Form onSubmit={handleSubmit}>
                 <Header content="Login" size={"huge"} />
-                <Form.Field error={touched.email && errors.email ? true:false}>
+                <Form.Field
+                  error={touched.email && errors.email ? true : false}
+                >
                   <label>Email:</label>
                   <input
                     type="email"
@@ -47,16 +49,19 @@ const Login = () => {
                     onBlur={handleBlur}
                     value={values.email}
                     placeholder="example@gmail.com"
-                    
                   />
                   {touched.email && errors.email ? (
-                    <div style={{color:'#9f3a38',padding:'4px 2px'}}>{errors.email}</div>
+                    <div style={{ color: "#9f3a38", padding: "4px 2px" }}>
+                      {errors.email}
+                    </div>
                   ) : null}
                 </Form.Field>
-                <Form.Field error={touched.password && errors.password ? true:false}>
+                <Form.Field
+                  error={touched.password && errors.password ? true : false}
+                >
                   <label>Password:</label>
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     name="password"
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -64,10 +69,20 @@ const Login = () => {
                     placeholder="Password"
                   />
                   {touched.password && errors.password ? (
-                    <div style={{color:'#9f3a38',padding:'4px 2px'}}>{errors.password}</div>
+                    <div style={{ color: "#9f3a38", padding: "4px 2px" }}>
+                      {errors.password}
+                    </div>
                   ) : null}
                 </Form.Field>
-              
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <label>Show Password</label>
+                  <input type="checkbox" onClick={handleShowPassword} />
+                </div>
                 <Button type="submit" color="vk" size="small">
                   Submit
                 </Button>
