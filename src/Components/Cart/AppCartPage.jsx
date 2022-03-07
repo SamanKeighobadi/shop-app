@@ -5,10 +5,10 @@ import { Grid } from "semantic-ui-react";
 import TotalCart from "./TotalCart";
 import AppCards from "./AppCards";
 import EmptyCart from "./EmptyCart";
-//? Prop Types 
-import PropTypes from 'prop-types'
+//? Prop Types
+import PropTypes from "prop-types";
 
-const AppCartPage = ({ productsInCart, removeProduct ,purchesProduct}) => {
+const AppCartPage = ({ productsInCart, removeProduct, purchesProduct }) => {
   return (
     <div>
       {productsInCart.length === 0 ? (
@@ -25,7 +25,10 @@ const AppCartPage = ({ productsInCart, removeProduct ,purchesProduct}) => {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <TotalCart purchesProduct={purchesProduct} totalProduct={productsInCart} />
+              <TotalCart
+                purchesProduct={purchesProduct}
+                totalProduct={productsInCart}
+              />
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -34,9 +37,10 @@ const AppCartPage = ({ productsInCart, removeProduct ,purchesProduct}) => {
   );
 };
 
-AppCartPage.propTypes ={
-  removeProduct:PropTypes.func,
-  productsInCart:PropTypes.array
-}
+AppCartPage.propTypes = {
+  removeProduct: PropTypes.func,
+  productsInCart: PropTypes.array,
+  purchesProduct:PropTypes.func
+};
 
 export default AppCartPage;
