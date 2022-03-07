@@ -23,9 +23,15 @@ const AppLoading = lazy(() => import("./Components/common/AppLoading"));
 function App() {
   const [cart, setCart] = useState([]);
 
+  // init Alert
   const Alert = withReactContent(Swal);
+  // init history object
   const history = useHistory();
 
+  /**
+   * 
+   * @param {Object} product poruct selected to add to cart
+   */
   const addToCart = (product) => {
     const result = [...cart, { ...product }];
     setCart(result);
@@ -36,6 +42,10 @@ function App() {
     });
   };
 
+  /**
+   * 
+   * @param {Object} productToRemove Product which user want to remove 
+   */
   const removeProduct = (productToRemove) => {
     setCart(cart.filter((product) => product !== productToRemove));
     toast.success("Product successfully removed from cart", {
