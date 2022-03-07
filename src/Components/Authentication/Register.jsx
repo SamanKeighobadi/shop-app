@@ -1,13 +1,6 @@
 import React, { Fragment } from "react";
 //? React Semantic UI Components
-import {
-  Form,
-  Button,
-  Header,
-  Container,
-  Segment,
-  Checkbox,
-} from "semantic-ui-react";
+import { Form, Button, Header, Container, Segment } from "semantic-ui-react";
 //? Import React Hemet
 import { Helmet } from "react-helmet";
 import { Formik } from "formik";
@@ -130,10 +123,9 @@ const Register = () => {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    
                   }}
                 >
-                  <div style={{display:"flex",alignItems:"center"}}>
+                  <div style={{ display: "flex", alignItems: "center" }}>
                     <label>I agree to the Terms and Conditions</label>
                     <input
                       type="checkbox"
@@ -143,9 +135,15 @@ const Register = () => {
                       name="rules"
                     />
                   </div>
-                  <div style={{display:"flex",alignItems:"center",marginLeft:"12px"}}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      marginLeft: "12px",
+                    }}
+                  >
                     <lable>Show Password</lable>
-                    <input type={'checkbox'} onClick={handleShowPassword} />
+                    <input type={"checkbox"} onClick={handleShowPassword} />
                   </div>
                 </div>
                 {touched.rules && errors.rules ? (

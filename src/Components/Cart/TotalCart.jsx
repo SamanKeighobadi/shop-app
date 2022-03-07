@@ -1,12 +1,12 @@
 import React from "react";
 //? React Semantic UI Components
-import { Segment, Header } from "semantic-ui-react";
+import { Segment, Header,Button } from "semantic-ui-react";
 //? Import Custom Hooks
 import useTotalProduct from "../customHooks/useTotalProduct";
 //? Prop Types
 import PropTypes from 'prop-types'
 
-const TotalCart = ({ totalProduct }) => {
+const TotalCart = ({ totalProduct,purchesProduct }) => {
   //* Custom Hook
   const { total } = useTotalProduct(totalProduct);
 
@@ -14,6 +14,9 @@ const TotalCart = ({ totalProduct }) => {
     <div>
       <Segment compact color='red' raised >
         <Header content={` Total Price: ${total}`} icon="dollar" />
+        <Button onClick={purchesProduct} >
+        Purches
+        </Button>
       </Segment>
     </div>
   );

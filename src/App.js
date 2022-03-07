@@ -37,6 +37,11 @@ function App() {
     });
   };
 
+
+  const purchesProduct = () =>{
+    setCart([]);
+  }
+
   return (
     <Suspense fallback={<div><AppLoading /></div>}>
       <Fragment>
@@ -61,6 +66,7 @@ function App() {
               <AppCartPage
                 productsInCart={cart}
                 removeProduct={(product) => removeProduct(product)}
+                purchesProduct={purchesProduct}
               />
             )}
           />

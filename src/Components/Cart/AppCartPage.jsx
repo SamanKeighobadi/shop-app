@@ -8,7 +8,7 @@ import EmptyCart from "./EmptyCart";
 //? Prop Types 
 import PropTypes from 'prop-types'
 
-const AppCartPage = ({ productsInCart, removeProduct }) => {
+const AppCartPage = ({ productsInCart, removeProduct ,purchesProduct}) => {
   return (
     <div>
       {productsInCart.length === 0 ? (
@@ -25,7 +25,7 @@ const AppCartPage = ({ productsInCart, removeProduct }) => {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <TotalCart totalProduct={productsInCart} />
+              <TotalCart purchesProduct={purchesProduct} totalProduct={productsInCart} />
             </Grid.Column>
           </Grid.Row>
         </Grid>

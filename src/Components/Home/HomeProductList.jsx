@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
+import { Link } from "react-router-dom";
 //? Semantic UI Components
-import { Grid, Container } from "semantic-ui-react";
+import { Grid, Container, Button } from "semantic-ui-react";
 //? Import Custom hook
 import useProducts from "../customHooks/useProducts";
 //? Import Custom Components
@@ -42,6 +43,11 @@ const HomeProductList = ({ addToCart }) => {
                   consequat amet dolor. Laboris aliquip eu irure culpa laborum
                   deserunt exercitation consequat amet dolor.
                 </p>
+                <Link to='/shop'>
+                  <Button color="violet" size="tiny">
+                    more
+                  </Button>
+                </Link>
               </div>
               <Grid verticalAlign={"middle"} centered>
                 {products.slice(0, 8).map((product, index) => (

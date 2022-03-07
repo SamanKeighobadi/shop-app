@@ -17,13 +17,13 @@ const AppHeader = ({ productLength }) => {
           <Menu.Item name="shop" content="Shop" />
         </Link>
 
-        <Link to="/register">
+        {/* <Link to="/register">
           <Menu.Item name="register" content="Register" />
         </Link>
 
         <Link to="/login">
           <Menu.Item name="login" content="Login" />
-        </Link>
+        </Link> */}
 
         <Menu.Menu position="right">
           <Menu.Item>
