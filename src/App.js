@@ -1,22 +1,30 @@
-import { useState, Fragment, Suspense,lazy } from "react";
+import { useState, Fragment, Suspense, lazy } from "react";
 //? Import React Router
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 //? Import Mainlayouts
 import MailLayouts from "./Components/layouts/MailLayouts";
 //? React toastify
 import { ToastContainer, toast } from "react-toastify";
+//? Sweetalert2 React
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 //? Import Components
-const Login = lazy(() => import('./Components/Authentication/Login'))
-const Register = lazy(() => import('./Components/Authentication/Register'))
-const AppCartPage = lazy(() => import('./Components/Cart/AppCartPage'))
-const PageNotFound = lazy(() => import("./Components/common/PageNotFound"))
-const AppShopPage = lazy(() => import("./Components/Shop/AppShopPage"))
-const SingleProductPage = lazy(() => import("./Components/SingleProductPage/SingleProductPage"))
-const AppHome = lazy(() => import("./Components/Home/AppHome"))
-const AppLoading = lazy(() => import("./Components/common/AppLoading"))
+const Login = lazy(() => import("./Components/Authentication/Login"));
+const Register = lazy(() => import("./Components/Authentication/Register"));
+const AppCartPage = lazy(() => import("./Components/Cart/AppCartPage"));
+const PageNotFound = lazy(() => import("./Components/common/PageNotFound"));
+const AppShopPage = lazy(() => import("./Components/Shop/AppShopPage"));
+const SingleProductPage = lazy(() =>
+  import("./Components/SingleProductPage/SingleProductPage")
+);
+const AppHome = lazy(() => import("./Components/Home/AppHome"));
+const AppLoading = lazy(() => import("./Components/common/AppLoading"));
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  const Alert = withReactContent(Swal);
+  const history = useHistory();
 
   const addToCart = (product) => {
     const result = [...cart, { ...product }];
@@ -37,47 +45,69 @@ function App() {
     });
   };
 
-
-  const purchesProduct = () =>{
-    setCart([]);
-  }
+  const purchesProduct = async () => {
+    const { isConfirmed } = await Alert.fire({
+      icon: "info",
+      title: "Are you sure?",
+      text: "Finish pruches",
+      showCancelButton: true,
+      cancelButtonText: "No",
+      confirmButtonText: "Yes",
+      cancelButtonColor: "red",
+      confirmButtonColor: "green",
+    });
+    if (isConfirmed) {
+      setCart([]);
+      history.replace("/");
+      Alert.fire({
+        icon: "success",
+        title: "Payment was successful",
+      });
+    }
+  };
 
   return (
-    <Suspense fallback={<div><AppLoading /></div>}>
+    <Suspense
+      fallback={
+        <div>
+          <AppLoading />
+        </div>
+      }
+    >
       <Fragment>
-      <MailLayouts productLength={cart.length}>
-        <Switch>
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <AppHome addToCart={(product) => addToCart(product)} />
-            )}
-          />
-          <Route
-            path="/shop"
-            render={() => (
-              <AppShopPage addToCart={(product) => addToCart(product)} />
-            )}
-          />
-          <Route
-            path="/cart"
-            render={() => (
-              <AppCartPage
-                productsInCart={cart}
-                removeProduct={(product) => removeProduct(product)}
-                purchesProduct={purchesProduct}
-              />
-            )}
-          />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/product/:productId" component={SingleProductPage} />
-          <Route component={PageNotFound} />
-        </Switch>
-      </MailLayouts>
-      <ToastContainer />
-    </Fragment>
+        <MailLayouts productLength={cart.length}>
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <AppHome addToCart={(product) => addToCart(product)} />
+              )}
+            />
+            <Route
+              path="/shop"
+              render={() => (
+                <AppShopPage addToCart={(product) => addToCart(product)} />
+              )}
+            />
+            <Route
+              path="/cart"
+              render={() => (
+                <AppCartPage
+                  productsInCart={cart}
+                  removeProduct={(product) => removeProduct(product)}
+                  purchesProduct={purchesProduct}
+                />
+              )}
+            />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/product/:productId" component={SingleProductPage} />
+            <Route component={PageNotFound} />
+          </Switch>
+        </MailLayouts>
+        <ToastContainer />
+      </Fragment>
     </Suspense>
   );
 }
