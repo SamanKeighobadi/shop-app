@@ -112,7 +112,7 @@ function App() {
             />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/product/:productId" component={SingleProductPage} />
+            <Route path="/product/:productId" render={() => <SingleProductPage addToCart={addToCart} />} />
             <Route component={PageNotFound} />
           </Switch>
         </MailLayouts>

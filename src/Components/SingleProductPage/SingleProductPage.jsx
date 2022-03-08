@@ -7,11 +7,14 @@ import useProducts from "../customHooks/useProducts";
 import { Grid, Container, Header, Image } from "semantic-ui-react";
 //? Import React Helmet
 import { Helmet } from "react-helmet";
+//? Porp Types
+import PropTypes from 'prop-types';
 //? Import custom components
 const AppLoading = React.lazy(() => import("../common/AppLoading"));
 const SingleProductDetails = React.lazy(() => import("./SingleProductDetails"));
 
-const SingleProductPage = () => {
+
+const SingleProductPage = ({addToCart}) => {
   //* useParams hook
   const { productId } = useParams();
   //* Custom hook
@@ -41,6 +44,8 @@ const SingleProductPage = () => {
                   price={price}
                   category={category}
                   description={description}
+                  product={product}
+                  addToCart={addToCart}
                 />
               </Grid.Column>
             </Grid>
@@ -50,5 +55,9 @@ const SingleProductPage = () => {
     </Suspense>
   );
 };
+
+SingleProductPage.propTypes = {
+  addToCart:PropTypes.func
+}
 
 export default SingleProductPage;
