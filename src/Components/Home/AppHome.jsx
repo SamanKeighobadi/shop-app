@@ -5,7 +5,6 @@ import { Header, Container, Segment } from "semantic-ui-react";
 import { Helmet } from "react-helmet";
 //? Prop Types
 import PorpTypes from "prop-types";
-import AppSlider from "../utils/AppSlider";
 //? import components
 const HomeProductList = React.lazy(() => import("./HomeProductList"));
 const AppLoading = React.lazy(() => import("../common/AppLoading"));
@@ -29,7 +28,6 @@ const AppHome = ({ addToCart }) => {
             
           </Container>
         </Segment>
-        {/* <AppSlider /> */}
         <HomeProductList addToCart={addToCart} />
       </Container>
     </Suspense>
