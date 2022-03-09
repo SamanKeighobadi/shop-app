@@ -12,7 +12,7 @@ const HomeProductList = ({ addToCart }) => {
   const { data: products, loading } = useProducts(
     "https://fakestoreapi.com/products"
   );
-  console.log(products);
+
 
   return (
     <Suspense

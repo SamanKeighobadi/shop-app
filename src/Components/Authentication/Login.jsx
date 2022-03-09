@@ -83,6 +83,10 @@ const Login = () => {
                   <label>Show Password</label>
                   <input type="checkbox" onClick={handleShowPassword} />
                 </div>
+                <a href="/register" >
+                  Dont have account ?
+                </a>
+                <br />
                 <Button type="submit" color="vk" size="small">
                   Submit
                 </Button>

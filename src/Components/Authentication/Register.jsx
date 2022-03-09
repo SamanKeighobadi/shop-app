@@ -151,6 +151,10 @@ const Register = () => {
                     {errors.rules}
                   </div>
                 ) : null}
+                <a href="/login" >
+                  already have an account ?
+                </a>
+                <br />
                 <Button content="Submit" color="vk" size={"small"} />
               </Form>
             )}

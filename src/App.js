@@ -110,8 +110,8 @@ function App() {
                 />
               )}
             />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+            <Route path="/login" render={() => <Login />} />
+            <Route path="/register" render={() => <Register />} />
             <Route path="/product/:productId" render={() => <SingleProductPage addToCart={addToCart} />} />
             <Route component={PageNotFound} />
           </Switch>

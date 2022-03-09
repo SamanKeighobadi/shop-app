@@ -5,10 +5,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter } from "react-router-dom";
 
 const App = React.lazy(() => import('./App'))
-const AppLoading = React.lazy(() => import("./Components/common/AppLoading"));
 
 render(
-  <Suspense fallback={<div>Loading...</div>}>
+  <Suspense fallback={<div/>}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
