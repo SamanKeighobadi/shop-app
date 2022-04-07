@@ -1,5 +1,5 @@
 
-# Shoping App with React.js + Semantic UI [![Netlify Status](https://api.netlify.com/api/v1/badges/86eae00b-0320-470a-bdf2-a06aa9fb1e41/deploy-status)](https://app.netlify.com/sites/gorgeous-frangollo-4d01cd/deploys)
+# Shoping App with React.js + Semantic UI 
 
 An online shop developed with React.js Front-End library , Semantic UI Framework and fake store api
 
